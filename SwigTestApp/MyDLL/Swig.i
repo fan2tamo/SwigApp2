@@ -1,18 +1,16 @@
 /* File : Swig.i */
-%include <windows.i> 
-%include <wchar.i>
-%include <std_string.i>
-%include <std_vector.i>
-%include <arrays_csharp.i>
-
 %module (directors="1") MyDLL
  
 %{
 #include "Header.h"
 %}
  
+%include <windows.i> 
+%include <std_string.i>
+%include <std_vector.i>
+%template(FloatVector) std::vector<float>;
+
+/* turn on director wrapping Callback */
 %feature("director") CallbackBase;
 
-/* Let's just grab the original header file here */
 %include "Header.h"
-%template(FloatVector) std::vector<float>;

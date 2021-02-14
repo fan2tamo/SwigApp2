@@ -8,7 +8,7 @@ namespace CsharpApp
         public override void Callback(string str, FloatVector fVect)
         {
             int i = 0;
-             Debug.WriteLine($"callback : str = {str}");
+            Debug.WriteLine($"callback : str = {str}");
             foreach (float value in fVect)
             {
                 Debug.WriteLine($"callback :  [{i}] :value = {value}");

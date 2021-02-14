@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 
 namespace CsharpApp
 {
@@ -8,10 +8,10 @@ namespace CsharpApp
         public override void Callback(string str, FloatVector fVect)
         {
             int i = 0;
-             Debug.WriteLine($"str = {str}");
+             Debug.WriteLine($"callback : str = {str}");
             foreach (float value in fVect)
             {
-                Debug.WriteLine($"[{i}] :value = {value}");
+                Debug.WriteLine($"callback :  [{i}] :value = {value}");
                 i += 1;
             }
         }
@@ -24,7 +24,7 @@ namespace CsharpApp
              MyCallback myCallbackObj = new MyCallback();
             CppClass instance = MyDLL.CreateInstance();
 
-            string str = "Hello World!";
+            string str = "テストHello World!";
             instance.SetString(str);
             Debug.WriteLine($"str = {instance.GetString()}");
 
@@ -46,3 +46,4 @@ namespace CsharpApp
         }
     }
 }
+
